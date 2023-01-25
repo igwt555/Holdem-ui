@@ -1,0 +1,717 @@
+.header-background {
+    position           : absolute;
+    top                : 0;
+    width              : 100%;
+    height             : 110px;
+    background-image   : url("../../assets/images/header-background.png");
+    background-repeat  : repeat-y;
+    background-position: center;
+    background-size    : cover;
+    z-index            : -1;
+}
+
+.main-wrapper {
+    .section__nft-poker--wrapper {
+        padding-top        : 30px;
+        background-image   : url("../../assets/images/herocircle.png");
+        background-repeat  : no-repeat;
+        background-position: 50% 100%;
+        background-size    : cover;
+        padding-bottom     : 100px;
+
+        @media (max-width: 640px) {
+            padding-bottom: 50px;
+        }
+
+        .section__nft-poker {
+            max-width      : 90%;
+            margin         : 0 auto;
+            display        : flex;
+            justify-content: space-between;
+            align-items    : center;
+
+            @media (max-width: 1024px) {
+                flex-wrap: wrap;
+            }
+
+            &>.section__nft-poker--left {
+                @media (max-width: 1024px) {
+                    // order     : 2;
+                    // margin-top: 50px;
+                    width     : 100%;
+                    text-align: center;
+                }
+
+                @media (max-width: 640px) {
+                    text-align: justify;
+
+                    br {
+                        display: none;
+                    }
+                }
+
+                &>p.title {
+                    margin        : 0 0 10px 0;
+                    font-family   : "Josefin Sans", sans-serif;
+                    font-size     : 75px;
+                    font-weight   : 600;
+                    color         : #fff;
+                    line-height   : 85px;
+                    letter-spacing: 3px;
+
+                    @media (max-width: 1024px) {
+                        font-size  : 55px;
+                        line-height: 65px;
+                    }
+
+                    @media (max-width: 640px) {
+                        font-size  : 40px;
+                        line-height: 50px;
+                    }
+                }
+
+                &>p.desc {
+                    font-family: Karla, sans-serif;
+                    font-size  : 18px;
+                    font-weight: 400;
+                    color      : hsla(0, 0%, 100%, 0.96);
+                    line-height: 28px;
+                }
+
+                &>.mint-poker-hands--wrapper {
+                    display   : flex;
+                    max-width : 80%;
+                    margin-top: 40px;
+                    flex-wrap : wrap;
+
+                    @media (max-width: 1024px) {
+                        margin-left : auto;
+                        margin-right: auto;
+                    }
+
+                    @media (max-width: 640px) {
+                        max-width: 100%;
+                    }
+
+                    &>.mint-poker-hands {
+                        width           : 100%;
+                        padding         : 20px;
+                        border-radius   : 10px;
+                        background-color: white;
+                        box-shadow      : 0 0 20px 0 hsl(0deg 0% 100% / 35%);
+
+                        form {
+                            &>p.title {
+                                text-align    : center;
+                                font-family   : Redtone, sans-serif;
+                                font-size     : 22px;
+                                color         : rgba(18, 21, 31, 0.77);
+                                padding-bottom: 20px;
+                                border-bottom : 0.4px solid rgba(0, 0, 0, 0.15);
+                            }
+
+                            &>p.current-price {
+                                text-align : center;
+                                font-family: Karla, sans-serif;
+                                font-size  : 20px;
+                                color      : rgba(18, 21, 31, 0.77);
+
+                                &>span {
+                                    padding         : 5px;
+                                    background-color: #1890ff;
+                                    color           : white;
+                                    border-radius   : 5px;
+
+                                    &:hover {
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+
+                            &>.input-area {
+                                display        : flex;
+                                justify-content: space-between;
+                                align-items    : center;
+                                margin-bottom  : 20px;
+
+                                &>select#mint_num {
+                                    display      : block;
+                                    width        : 40%;
+                                    height       : 45px;
+                                    padding      : 5px 16px 8px;
+                                    border       : 1px solid #d8d8d8;
+                                    border-radius: 8px;
+                                    font-size    : 20px;
+                                    font-family  : Karla, sans-serif;
+                                    color        : #333333;
+
+                                    &:focus {
+                                        border-color: rgb(10, 172, 212);
+                                    }
+                                }
+
+                                &>input[type="text"] {
+                                    display        : flex;
+                                    justify-content: center;
+                                    align-items    : center;
+                                    width          : 40%;
+                                    height         : 45px;
+                                    margin-bottom  : 0;
+                                    border         : 1px solid rgba(255, 41, 195, 0.34);
+                                    border-radius  : 8px;
+                                    font-size      : 20px;
+                                    font-family    : Karla, sans-serif;
+                                    color          : #333333;
+                                    font-weight    : bold;
+                                    padding        : 15px 10px;
+                                }
+                            }
+
+                            .max-per-address {
+                                margin-top : 10px;
+                                font-family: Karla, sans-serif;
+                                font-size  : 15px;
+                                color      : rgba(0, 0, 0, 0.45);
+                            }
+
+                            &>.btn--mint {
+                                width           : 100%;
+                                margin-top      : 20px;
+                                padding-top     : 16px;
+                                padding-bottom  : 16px;
+                                border-radius   : 8px;
+                                background-image: linear-gradient(117deg, #1847ed, #391cef);
+                                transition      : all 500ms ease;
+                                font-family     : Karla, sans-serif;
+                                font-size       : 19px;
+                                color           : white;
+                                text-align      : center;
+                                letter-spacing  : 1px;
+
+                                &:hover {
+                                    background-color: transparent;
+                                    background-image: linear-gradient(117deg, #2a59ff, #462bf5);
+                                }
+
+                                &:disabled:hover {
+                                    cursor: not-allowed;
+                                }
+                            }
+                        }
+
+                        .connect-wallet-to-mint {
+                            font-family: Karla, sans-serif;
+                            font-size  : 20px;
+                            line-height: 25px;
+                            font-weight: bold;
+                            color      : black;
+                            margin     : 0;
+                            text-align : center;
+                        }
+                    }
+
+                    &>p.total-nfts-minted {
+                        width      : 100%;
+                        margin-top : 10px;
+                        font-family: Karla, sans-serif;
+                        font-size  : 16px;
+                        color      : white;
+                        line-height: 26px;
+                        text-align : center;
+                    }
+
+                    .coming-soon__title {
+                        font-family: "Josefin Sans", sans-serif;
+                        font-size  : 45px;
+                        color      : #fff;
+                        line-height: 30px;
+                        text-align : center;
+                        width      : 100%;
+                    }
+
+                    .coming-soon__img {
+                        display: block;
+                        width  : 70%;
+                        height : auto;
+                        margin : 0 auto;
+                    }
+                }
+            }
+
+            &>.section__nft-poker--right {
+                width          : 50%;
+                max-width      : 50%;
+                display        : flex;
+                flex-direction : column;
+                justify-content: center;
+                align-items    : center;
+
+                @media (max-width: 1280px) and (min-width: 1024px) {
+                    width    : 70%;
+                    max-width: 70%;
+                }
+
+                @media (max-width: 1024px) {
+                    width       : 90%;
+                    max-width   : 90%;
+                    // order    : 1;
+                    margin      : 0 auto;
+                }
+
+                @media (max-width: 640px) {
+                    width    : 100%;
+                    max-width: 100%;
+                }
+
+                &>p.countdown__title {
+                    margin        : 20px 0 10px 0;
+                    font-family   : "Josefin Sans", sans-serif;
+                    font-size     : 22px;
+                    font-weight   : 600;
+                    color         : #fff;
+                    text-align    : center;
+                    line-height   : 32px;
+                    letter-spacing: 1px;
+                }
+
+                &>.time-card--wrapper {
+                    display        : flex;
+                    justify-content: center;
+                    align-items    : center;
+
+                    &>.time-card {
+                        margin          : 0 10px;
+                        padding         : 20px 20px;
+                        border-radius   : 10px;
+                        background-color: #fff;
+                        box-shadow      : 0 0 6px 0 hsl(0deg 0% 100% / 25%);
+
+                        &>p {
+                            margin-bottom : 0;
+                            font-family   : Redtone, sans-serif;
+                            letter-spacing: 1px;
+                            text-align    : center;
+
+                            &:first-child {
+                                color      : #242121;
+                                font-size  : 65px;
+                                line-height: 65px;
+                                font-weight: 600;
+                            }
+
+                            &:last-child {
+                                margin-top : 10px;
+                                color      : rgba(36, 33, 33, 0.6);
+                                font-size  : 25px;
+                                font-weight: 400;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .price-chart-area {
+            width    : 90%;
+            max-width: 90%;
+            margin   : 50px auto 0 auto;
+        }
+    }
+
+    .section__open-source {
+        display            : flex;
+        justify-content    : space-between;
+        align-items        : center;
+        width              : 100%;
+        overflow           : hidden;
+        height             : auto;
+        padding            : 0 5% 63px 5%;
+        background-image   : url(../../assets/images/section2bg_1.png);
+        background-position: 100% 50%;
+        background-size    : cover;
+        background-repeat  : no-repeat;
+
+        @media (max-width: 1024px) {
+            flex-wrap: wrap;
+        }
+
+        &>div {
+            width    : 45%;
+            max-width: 45%;
+
+            @media (max-width: 1280px) and (min-width: 1024px) {
+                width    : 50%;
+                max-width: 50%;
+            }
+
+            @media (max-width: 1024px) {
+                width       : 90%;
+                max-width   : 90%;
+                margin-left : auto;
+                margin-right: auto;
+            }
+
+            @media (max-width: 640px) {
+                width    : 100%;
+                max-width: 100%;
+            }
+
+            &.section__open-source--text {
+                @media (max-width: 1024px) {
+                    // order     : 2;
+                    // margin-top: 50px;
+                }
+
+                &>p.title {
+                    margin-bottom : 30px;
+                    font-family   : "Josefin Sans", sans-serif;
+                    font-size     : 70px;
+                    font-weight   : 600;
+                    color         : #fff;
+                    line-height   : 75px;
+                    letter-spacing: 3px;
+                    text-align    : left;
+
+                    @media (max-width: 1024px) {
+                        text-align : center;
+                        font-size  : 55px;
+                        line-height: 65px;
+                    }
+
+                    @media (max-width: 640px) {
+                        text-align : left;
+                        font-size  : 40px;
+                        line-height: 50px;
+                    }
+                }
+
+                &>.desc {
+                    &>p {
+                        max-width  : 80%;
+                        font-family: Karla, sans-serif;
+                        font-size  : 17px;
+                        color      : hsla(0, 0%, 100%, 0.81);
+                        line-height: 27px;
+
+                        @media (max-width: 1024px) {
+                            text-align: center;
+                            max-width : 100%;
+                        }
+
+                        @media (max-width: 640px) {
+                            text-align: justify;
+                        }
+                    }
+
+                    a {
+                        color     : #c2aeff;
+                        transition: all 200ms ease;
+
+                        &:hover {
+                            color: #9c7bff;
+                        }
+                    }
+                }
+            }
+
+            &.section__open-source--img {
+                @media (max-width: 1024px) {
+                    // order: 1;
+                }
+
+                &>img {
+                    display  : block;
+                    max-width: 100%;
+                    margin   : 0 auto;
+                }
+            }
+        }
+    }
+
+    .section__rest--wrapper {
+        background-image: url("../../assets/images/section3bg.png");
+        background-size : cover;
+
+        &>.section__rest {
+            margin: 0 auto;
+
+            &>div {
+                &.game-play {
+                    width          : 100%;
+                    display        : flex;
+                    justify-content: space-between;
+                    align-items    : center;
+
+                    @media (max-width: 1024px) {
+                        flex-wrap: wrap;
+                    }
+
+                    &>img {
+                        display: block;
+                        margin : auto;
+
+                        @media (max-width: 1024px) {
+                            order: 2;
+                        }
+                    }
+
+                    &>.game-play__text {
+                        max-width  : 40%;
+                        margin-left: 0;
+                        padding    : 0 40px 0 20px;
+
+                        @media (max-width: 1024px) {
+                            max-width   : 90%;
+                            margin-left : auto;
+                            margin-right: auto;
+                            margin-top  : 50px;
+                            padding     : 0;
+                            order       : 1;
+                        }
+
+                        &>p.title {
+                            margin-bottom : 30px;
+                            font-family   : "Josefin Sans", sans-serif;
+                            font-size     : 70px;
+                            font-weight   : 600;
+                            color         : #fff;
+                            line-height   : 75px;
+                            letter-spacing: 3px;
+                            text-align    : left;
+
+                            @media (max-width: 1024px) {
+                                text-align : center;
+                                font-size  : 55px;
+                                line-height: 65px;
+                            }
+
+                            @media (max-width: 640px) {
+                                text-align : left;
+                                font-size  : 40px;
+                                line-height: 50px;
+                            }
+                        }
+
+                        &>.desc>p {
+                            max-width  : 80%;
+                            font-family: Karla, sans-serif;
+                            color      : hsla(0, 0%, 100%, 0.81);
+                            font-size  : 17px;
+                            line-height: 27px;
+
+                            @media (max-width: 1280px) {
+                                max-width: 100%;
+                            }
+
+                            @media (max-width: 1024px) {
+                                text-align: center;
+                            }
+
+                            @media (max-width: 640px) {
+                                text-align: justify;
+                            }
+                        }
+
+                        &>.game-play__btn-group {
+                            display        : flex;
+                            justify-content: flex-start;
+                            align-items    : center;
+                            margin-top     : 20px;
+
+                            @media (max-width: 1024px) {
+                                justify-content: center;
+                            }
+
+                            @media (max-width: 640px) {
+                                justify-content: flex-start;
+                            }
+
+                            &>* {
+                                display        : flex;
+                                justify-content: center;
+                                align-items    : center;
+                                min-width      : 130px;
+                                margin-top     : 40px;
+                                padding        : 14px 26px;
+                                font-family    : Karla, sans-serif;
+                                color          : #fff;
+                                font-size      : 18px;
+                                font-weight    : 400;
+                                letter-spacing : 0px;
+                                transition     : all 0.1s ease-out;
+
+                                &.btn--play {
+                                    background-color: #133cce;
+                                    border-radius   : 6px;
+
+                                    &:hover {
+                                        box-shadow: 1px 1px 20px 0 #174aff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.roadmap--wrapper {
+                    display        : flex;
+                    align-items    : center;
+                    justify-content: space-between;
+                    margin-top     : 150px;
+                    width          : 90%;
+                    max-width      : 90%;
+                    margin-left    : auto;
+                    margin-right   : auto;
+
+                    @media (max-width: 1024px) {
+                        flex-wrap : wrap;
+                        margin-top: 100px;
+                    }
+
+                    @media (max-width: 640px) {
+                        margin-top: 50px;
+                    }
+
+                    .roadmap__text {
+                        margin-right: 50px;
+
+                        @media (max-width: 1024px) {
+                            width          : 90%;
+                            max-width      : 90%;
+                            // order       : 2;
+                            margin-left    : auto;
+                            margin-right   : auto;
+                            // margin-top  : 50px;
+
+                            * {
+                                text-align: center;
+                            }
+                        }
+
+                        @media (max-width: 640px) {
+                            width    : 100%;
+                            max-width: 100%;
+
+                            * {
+                                text-align: left;
+                            }
+                        }
+
+                        * {
+                            color: white;
+                        }
+
+                        .title {
+                            margin-bottom : 30 px;
+                            font-family   : "Josefin Sans", sans-serif;
+                            font-size     : 70px;
+                            font-weight   : 600;
+                            color         : #fff;
+                            line-height   : 75px;
+                            letter-spacing: 3px;
+                            text-align    : left;
+
+                            @media (max-width: 1024px) {
+                                text-align : center;
+                                font-size  : 55px;
+                                line-height: 65px;
+                            }
+
+                            @media (max-width: 640px) {
+                                text-align : left;
+                                font-size  : 40px;
+                                line-height: 50px;
+                            }
+                        }
+
+                        .subtitle {
+                            font-family  : Karla, sans-serif;
+                            font-size    : 25px;
+                            line-height  : 29px;
+                            margin-bottom: 10px;
+                        }
+
+                        .desc {
+                            font-family  : Karla, sans-serif;
+                            font-size    : 17px;
+                            color        : rgba(255, 255, 255, 0.81);
+                            line-height  : 27px;
+                            margin-bottom: 30px;
+                        }
+                    }
+
+                    .roadmap__img {
+                        @media (max-width: 1024px) {
+                            width          : 90%;
+                            max-width      : 90%;
+                            // order       : 1;
+                            margin-left    : auto;
+                            margin-right   : auto;
+
+                            &>svg {
+                                width: 100%;
+                            }
+                        }
+
+                        @media (max-width: 640px) {
+                            width    : 100%;
+                            max-width: 100%;
+
+                            &>svg {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+
+                &.animation-btn-group {
+                    max-width     : 30%;
+                    margin        : 0 auto;
+                    margin-top    : 100px;
+                    padding-bottom: 100px;
+
+                    @media (max-width: 1024px) {
+                        max-width: 50%;
+                    }
+
+                    @media (max-width: 640px) {
+                        max-width     : 90%;
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.video-container--16x9 {
+    width         : 100%;
+    height        : 0;
+    padding-bottom: 56.25%;
+    position      : relative;
+
+    &>.inner-wrapper {
+        position: absolute;
+        top     : 0;
+        right   : 0;
+        bottom  : 0;
+        left    : 0;
+
+        &>iframe {
+            width : 100%;
+            height: 100%;
+        }
+    }
+
+    &.mobile {
+        display: none;
+    }
+
+    @media (max-width: 1024px) {
+        display: none;
+
+        &.mobile {
+            display: block;
+        }
+    }
+}
