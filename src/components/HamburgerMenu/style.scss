@@ -1,0 +1,159 @@
+.hamburger-menu {
+  @media (min-width: 1280px) {
+    display: none;
+  }
+
+  .burger {
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-around;
+    width          : 2rem;
+    height         : 2rem;
+    background     : transparent;
+    border         : none;
+    cursor         : pointer;
+    padding        : 0;
+    z-index        : 200;
+
+    &:focus {
+      outline: none;
+    }
+
+    &>div {
+      width           : 2rem;
+      height          : 0.25rem;
+      background      : white;
+      border-radius   : 10px;
+      transition      : all 0.3s linear;
+      position        : relative;
+      transform-origin: 1px;
+      z-index         : 200;
+    }
+
+    &.burger--open {
+      &>div {
+        background-color: #262630;
+
+        &:first-child {
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity  : 0;
+          transform: translateX(20px);
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .menu {
+    width          : 50%;
+    display        : flex;
+    flex-direction : column;
+    justify-content: flex-start;
+    background     : white;
+    height         : 100vh;
+    text-align     : left;
+    padding        : 7rem 2rem;
+    position       : fixed;
+    top            : 0;
+    right          : 0;
+    transition     : transform 0.3s ease-in-out;
+    z-index        : 100;
+
+    @media (max-width: 640px) {
+      width: 100%;
+    }
+
+    * {
+      font-family: Karla;
+      font-style : normal;
+      font-weight: 600;
+    }
+
+    &>a,
+    button.dropdown-btn--mobile {
+      display        : flex;
+      align-items    : center;
+      background     : transparent;
+      padding        : 1.5rem 0;
+      text-align     : left;
+      font-size      : 2rem;
+      color          : #262429;
+      text-decoration: none;
+      transition     : color 0.3s linear;
+
+      @media (max-width: 768px) {
+        padding  : 1rem 0;
+        font-size: 1.5rem;
+      }
+
+      &:hover {
+        color: #343078;
+      }
+    }
+
+    .btn-connect-wallet {
+      margin-top: 1.5rem;
+      font-size : 2rem;
+      padding   : 1.5rem 0;
+
+      @media (max-width: 640px) {
+        margin-top: 1rem;
+        padding   : 1rem 0;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 1.5rem;
+      }
+    }
+
+    .dropdown-body--mobile {
+      display        : flex;
+      flex-direction : column;
+      justify-content: flex-start;
+      list-style     : none;
+      padding-left   : 0;
+      margin-bottom  : 0;
+      overflow       : hidden;
+
+      &>li {
+        &>a {
+          display        : flex;
+          justify-content: flex-start;
+          align-items    : center;
+          padding        : 1.3rem 0;
+
+          @media (max-width: 768px) {
+            font-size: 0.9rem;
+          }
+
+          &>span {
+            margin-left: 10px;
+          }
+
+          * {
+            color    : #332424;
+            font-size: 1.8rem;
+
+            @media (max-width: 768px) {
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+
+      &.hidden {
+        display: none;
+      }
+    }
+
+    &.menu--close {
+      transform: translateX(100%);
+    }
+  }
+}

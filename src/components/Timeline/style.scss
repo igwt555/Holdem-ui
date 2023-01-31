@@ -1,0 +1,96 @@
+.timeline-wrapper {
+    margin-top: 100px;
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
+
+    .timeline {
+        list-style-type: none;
+        display        : flex;
+        align-items    : center;
+        justify-content: center;
+    }
+
+    .li {
+        transition: all 200ms ease-in;
+    }
+
+    .timestamp {
+        width         : 300px;
+        padding-top   : 40px;
+        display       : flex;
+        flex-direction: column;
+        align-items   : center;
+        border-top    : 2px solid #D6DCE0;
+        position      : relative;
+        transition    : all 200ms ease-in;
+
+        &:before {
+            content         : '';
+            width           : 25px;
+            height          : 25px;
+            background-color: white;
+            border-radius   : 25px;
+            border          : 1px solid #ddd;
+            position        : absolute;
+            top             : 0;
+            left            : 50%;
+            transform       : translate(-50%, -50%);
+            transition      : all 200ms ease-in;
+        }
+
+        .date {
+            color        : white;
+            text-align   : center;
+            font-family  : "Josefin Sans", sans-serif;
+            font-weight  : bold;
+            font-size    : 37px;
+            line-height  : 37px;
+            margin-bottom: 16px;
+        }
+
+        .title {
+            color      : white;
+            text-align : center;
+            font-family: Karla, sans-serif;
+            font-size  : 25px;
+            line-height: 29px;
+        }
+    }
+
+    .li.complete {
+        .timestamp {
+            border-top: 2px solid #133cce;
+
+            &:before {
+                background-color: #133cce;
+                border          : none;
+                transition      : all 200ms ease-in;
+            }
+        }
+    }
+
+    @media (min-device-width: 320px) and (max-device-width: 700px) {
+        .timeline {
+            list-style-type: none;
+            display        : block;
+        }
+
+        .li {
+            transition: all 200ms ease-in;
+            display   : flex;
+            width     : inherit;
+        }
+
+        .timestamp {
+            width: 100px;
+
+            &:before {
+                left      : -8%;
+                top       : 30%;
+                transition: all 200ms ease-in;
+            }
+        }
+    }
+}

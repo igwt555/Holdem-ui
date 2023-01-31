@@ -1,0 +1,74 @@
+.wallet_page-wrapper {
+    width    : 90%;
+    max-width: 90%;
+    margin   : 50px auto;
+
+    .wallet-header {
+        margin-bottom: 0;
+
+        .title {
+            font-family   : Redtone, sans-serif;
+            font-weight   : bold;
+            font-size     : 45px;
+            line-height   : 45px;
+            letter-spacing: 0.075em;
+            color         : white;
+            text-align    : center;
+            margin-bottom : 20px;
+        }
+
+        .desc {
+            font-family: Karla;
+            font-size  : 16px;
+            line-height: 29px;
+            color      : #FFFFFF;
+            text-align : center;
+            padding    : 0;
+        }
+    }
+
+    .wallet-main {
+        display        : flex;
+        justify-content: center;
+        flex-wrap      : wrap;
+
+        &>.nft_card {
+            margin: 40px 30px;
+        }
+    }
+}
+
+.no_nfts-body {
+    margin-top: 120px;
+
+    &>.title {
+        font-family   : Redtone, sans-serif;
+        font-style    : normal;
+        font-weight   : bold;
+        font-size     : 45px;
+        line-height   : 45px;
+        text-align    : center;
+        letter-spacing: 0.075em;
+        color         : #FFFFFF;
+    }
+
+    &>.btn-wrapper {
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .mint_now_btn {
+        display      : inline-block;
+        margin       : 0 auto;
+        padding      : 11px 58.5px;
+        background   : #174AFF;
+        border-radius: 5px;
+
+        font-family: Karla, sans-serif;
+        font-style : normal;
+        font-weight: bold;
+        font-size  : 19px;
+        line-height: 22px;
+        color      : #FFFFFF;
+    }
+}

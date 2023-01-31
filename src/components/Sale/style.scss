@@ -1,0 +1,363 @@
+.sales_page-wrapper {
+    width    : 90%;
+    max-width: 90%;
+    margin   : 50px auto;
+
+    &>* {
+        color: white;
+    }
+
+    &>.title {
+        font-family   : Redtone, sans-serif;
+        font-style    : normal;
+        font-weight   : bold;
+        font-size     : 45px;
+        line-height   : 45px;
+        letter-spacing: 0.075em;
+        text-align    : center;
+        margin-bottom : 30px;
+    }
+
+    &>.desc {
+        font-family  : Karla, sans-serif;
+        font-style   : normal;
+        font-weight  : normal;
+        font-size    : 16px;
+        line-height  : 19px;
+        text-align   : center;
+        margin-bottom: 80px;
+    }
+
+    .sale_info {
+        text-align: center;
+
+        * {
+            color         : white;
+            font-family   : Redtone, sans-serif;
+            font-style    : normal;
+            font-weight   : bold;
+            font-size     : 35px;
+            line-height   : 35px;
+            text-align    : center;
+            letter-spacing: 0.075em;
+        }
+
+        .countdown {
+            display        : flex;
+            justify-content: space-between;
+            align-items    : center;
+            width          : 30%;
+            margin         : 50px auto;
+
+            &>div {
+                &>div:first-child {
+                    font-family   : Redtone, sans-serif;
+                    font-style    : normal;
+                    font-weight   : 600;
+                    font-size     : 40px;
+                    line-height   : 50px;
+                    letter-spacing: 0.025em;
+                }
+
+                &>div:last-child {
+                    font-family   : Redtone, sans-serif;
+                    font-style    : normal;
+                    font-weight   : normal;
+                    font-size     : 26px;
+                    line-height   : 26px;
+                    letter-spacing: 0.035em;
+                    color         : rgba(255, 255, 255, 0.9);
+                }
+            }
+        }
+    }
+
+    form[name="mint-form"] {
+        margin-top     : 50px;
+        margin-bottom  : 100px;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        font-size      : 2em;
+
+        &>span {
+            margin-left : 10px;
+            margin-right: 10px;
+        }
+
+        select[name="mint_amount"] {
+            background   : rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            padding-left : 10px;
+            padding-right: 20px;
+        }
+
+        button {
+            border       : none;
+            padding      : 12px 20px;
+            background   : #174AFF;
+            border-radius: 5px;
+            font-family  : Karla, sans-serif;
+            font-weight  : bold;
+        }
+
+        input[type="submit"] {
+            border       : none;
+            padding      : 12px 20px;
+            background   : #174AFF;
+            border-radius: 5px;
+            font-family  : Karla, sans-serif;
+            font-weight  : bold;
+        }
+    }
+
+    form[name="refresh-form"] {
+        input[type="submit"] {
+            border       : none;
+            padding      : 12px 20px;
+            background   : #174AFF;
+            border-radius: 5px;
+            font-family  : Karla, sans-serif;
+            font-weight  : bold;
+        }
+    }
+
+
+    .sales-header {
+        margin-bottom: 48px;
+
+        .title {
+            font-family   : Redtone, sans-serif;
+            font-weight   : bold;
+            font-size     : 45px;
+            line-height   : 45px;
+            letter-spacing: 0.075em;
+            text-align    : center;
+        }
+
+        ul.tabs {
+            list-style-type: none;
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            padding        : 0;
+
+            &>li {
+
+                &:first-child {
+                    margin-right: 32px;
+                }
+
+                &>p {
+                    font-family  : Karla;
+                    font-size    : 17px;
+                    line-height  : 27px;
+                    color        : white;
+                    padding      : 4px 0;
+                    border-bottom: 1px solid transparent;
+
+                    &:hover {
+                        color       : #426BFF;
+                        border-color: #426BFF;
+                        cursor      : pointer;
+                    }
+
+                    &.active {
+                        color       : #426BFF;
+                        border-color: #426BFF;
+                    }
+                }
+            }
+        }
+    }
+
+    .sales-main {
+        display: flex;
+
+        &>.filter_sidebar {
+            width    : 200px;
+            min-width: 200px;
+
+            &>.title {
+                font-family   : Redtone, sans-serif;
+                font-weight   : bold;
+                font-size     : 22px;
+                line-height   : 27px;
+                letter-spacing: 0.12em;
+                color         : #FFFFFF;
+                padding-bottom: 9px;
+                border-bottom : 1px solid rgba(255, 255, 255, 0.4);
+            }
+
+            &>.filter_body {
+                margin-top: 30px;
+
+                &>.filter_item {
+                    margin-bottom: 35px;
+
+                    &>p {
+                        font-family  : Karla;
+                        font-weight  : bold;
+                        font-size    : 19px;
+                        line-height  : 27px;
+                        color        : #FFFFFF;
+                        margin-bottom: 22px;
+                    }
+
+                    // Checkbox group
+                    &>.ant-checkbox-group {
+                        &>label {
+                            width: 100%;
+
+                            &:not(:last-child) {
+                                margin-bottom: 22px;
+                            }
+
+                            &>span:nth-child(2) {
+                                font-family: Karla;
+                                font-size  : 16px;
+                                line-height: 19px;
+                                display    : flex;
+                                align-items: center;
+                                color      : #FFFFFF;
+                            }
+
+                            .ant-checkbox-wrapper:hover .ant-checkbox-inner,
+                            .ant-checkbox:hover .ant-checkbox-inner,
+                            .ant-checkbox-input:focus+.ant-checkbox-inner {
+                                border-color: #0C35C6;
+                            }
+
+                            .ant-checkbox-checked .ant-checkbox-inner {
+                                background-color: #0C35C6;
+                                border-color    : #0C35C6;
+                            }
+                        }
+                    }
+
+                    // Slider
+                    &>.ant-slider {
+
+                        &>.ant-slider-track.ant-slider-track-1 {
+                            background-color: #0C35C6;
+                        }
+
+                        &:hover .ant-silder-track {
+                            background-color: #0C35C6;
+                        }
+
+                        &>.ant-slider-handle {
+                            width           : 16px;
+                            height          : 16px;
+                            background-color: #0C35C6;
+                            border-color    : white;
+                        }
+
+                        &>.ant-slider-mark {
+                            &>.ant-slider-mark-text {
+                                font-family: Karla;
+                                font-size  : 14px;
+                                line-height: 24px;
+                                color      : #FFFFFF;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &>.nft_list-wrapper {
+            margin-left: 85px;
+
+            .nft_list {
+                display  : flex;
+                flex-wrap: wrap;
+
+                .ant-card {
+                    width        : 240px;
+                    margin       : 0 30px 40px 0;
+                    padding      : 17px 22px;
+                    border-radius: 12px;
+                    overflow     : hidden;
+
+                    .ant-card-head {
+                        padding      : 0;
+                        min-height   : unset;
+                        border-bottom: unset;
+                        margin-bottom: 15px;
+
+                        .ant-card-head-wrapper {
+
+                            .ant-card-head-title {
+                                padding    : 0;
+                                font-family: Karla;
+                                font-weight: bold;
+                                font-size  : 20px;
+                                line-height: 30px;
+                                color      : #242121;
+                                text-align : center;
+                            }
+                        }
+                    }
+
+                    .ant-card-cover {
+
+                        .ant-image {
+
+                            .ant-image-img {
+                                padding   : 0;
+                                box-shadow: 0px 0px 13px rgba(30, 30, 47, 0.16);
+                            }
+                        }
+                    }
+
+                    .ant-card-body {
+                        margin-top: 10px;
+                        padding   : 12px 0 0 0;
+                        border-top: 1px solid rgba(0, 0, 0, 0.1);
+                    }
+
+                    .ant-card-actions {
+                        transition: all 0.3s ease-in-out;
+                        border-top: unset;
+
+                        &>li {
+                            margin: 0;
+
+                            &>span>a {
+                                width        : 100%;
+                                padding      : 16px 22px;
+                                border-radius: 5px;
+                                font-family  : "DM Sans", sans-serif;
+                                font-weight  : 500;
+                                font-size    : 17px;
+                                line-height  : 27px;
+                                background   : #174AFF;
+                                color        : #FFFFFF;
+                                border       : 2px solid transparent;
+
+                                &:hover {
+                                    cursor    : pointer;
+                                    color     : #174AFF;
+                                    background: #FFFFFF;
+                                    border    : 2px solid #174AFF;
+                                }
+
+                                &.minted {
+                                    color     : #174AFF;
+                                    background: #FFFFFF;
+                                    border    : 2px solid #174AFF;
+
+                                    &:hover {
+                                        background: #174AFF;
+                                        color     : #FFFFFF;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

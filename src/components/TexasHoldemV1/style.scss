@@ -1,0 +1,875 @@
+.play-wrapper {
+    width    : 90%;
+    max-width: 90%;
+    margin   : 50px auto;
+
+    .title {
+        font-family   : Redtone, sans-serif;
+        font-weight   : bold;
+        font-size     : 45px;
+        line-height   : 45px;
+        letter-spacing: 0.075em;
+        color         : white;
+        text-align    : center;
+    }
+
+    .start_btn {
+        margin       : 0 auto;
+        padding      : 11px 58.5px;
+        background   : #174AFF;
+        border-radius: 5px;
+
+        font-family: Karla, sans-serif;
+        font-style : normal;
+        font-weight: bold;
+        font-size  : 19px;
+        line-height: 22px;
+        color      : #FFFFFF;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .game_start_card {
+        padding      : 20px;
+        background   : #FFFFFF;
+        border-radius: 8px;
+        position     : relative;
+
+        .modal-close {
+            cursor     : pointer;
+            color      : #2C2C2C;
+            font-size  : 35px;
+            font-weight: bold;
+            line-height: 20px;
+            padding    : 5px;
+            position   : absolute;
+            top        : 0;
+            right      : 0;
+            z-index    : 100;
+
+            &:hover {
+                color: #0000008f;
+            }
+        }
+
+        &>.title {
+            padding-bottom: 14px;
+            font-family   : Karla, sans-serif;
+            font-style    : normal;
+            font-weight   : bold;
+            font-size     : 19px;
+            line-height   : 22px;
+            color         : #2C2C2C;
+            text-align    : center;
+            border-bottom : 1px solid rgba(0, 0, 0, 0.15);
+        }
+
+        .ant-form-item-label {
+            text-align: left;
+
+            &>label {
+                font-family: "DM Sans", sans-serif;
+                font-style : normal;
+                font-weight: 500;
+                font-size  : 16px;
+                line-height: 26px;
+                color      : #2C2C2C;
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+
+        .ant-input-group {
+            display: flex;
+        }
+
+        .ant-input-group>.ant-input:first-child,
+        .ant-input-group-addon:first-child {
+            border-radius: 3px;
+            width        : 100px;
+        }
+
+        .ant-input-group-addon {
+            border          : none;
+            background-color: transparent;
+            margin-left     : 10px;
+
+            font-family: "DM Sans", sans-serif;
+            font-style : normal;
+            font-weight: normal;
+            font-size  : 15px;
+            line-height: 26px;
+            color      : rgba(44, 44, 44, 0.9);
+            padding    : 0;
+        }
+
+        .ant-row.ant-form-item.start_btn-wrapper {
+            margin-top   : 40px;
+            margin-bottom: 0;
+
+            &>.ant-col.ant-col-16.ant-form-item-control {
+                max-width: 100%;
+                width    : 100%;
+
+                .ant-btn.ant-btn-primary {
+                    display      : block;
+                    width        : 100%;
+                    height       : auto;
+                    padding      : 10px;
+                    background   : linear-gradient(101.75deg, #3D56EF 6.43%, #AB43CA 108.38%);
+                    border       : none;
+                    border-radius: 6px;
+
+                    &>span {
+                        display       : block;
+                        font-family   : Karla, sans-serif;
+                        font-style    : normal;
+                        font-weight   : bold;
+                        font-size     : 18px;
+                        line-height   : 27px;
+                        letter-spacing: 0.01em;
+                        color         : #FFFFFF;
+                    }
+
+                    &:hover {
+                        box-shadow: 1px 1px 20px 0 #6c7ef3;
+                    }
+                }
+            }
+        }
+    }
+
+    .ant-tabs.ant-tabs-top {
+        margin-top: 75px;
+
+        .ant-tabs-tab>.ant-tabs-tab-btn {
+            font-family   : Redtone, sans-serif;
+            font-style    : normal;
+            font-weight   : 600;
+            font-size     : 22px;
+            line-height   : 32px;
+            letter-spacing: 0.035em;
+            color         : #FFFFFF;
+        }
+
+        .ant-tabs-tab+.ant-tabs-tab {
+            margin: 0 0 0 52px;
+        }
+
+        .ant-tabs-tab.ant-tabs-tab-active {
+
+            &>.ant-tabs-tab-btn {
+                color: #174AFF;
+            }
+        }
+    }
+
+    .ant-tabs-top>.ant-tabs-nav::before,
+    .ant-tabs-bottom>.ant-tabs-nav::before,
+    .ant-tabs-top>div>.ant-tabs-nav::before,
+    .ant-tabs-bottom>div>.ant-tabs-nav::before {
+        border-bottom: 1px solid #FFFFFF;
+    }
+
+    .ant-tabs-top>.ant-tabs-nav .ant-tabs-ink-bar,
+    .ant-tabs-bottom>.ant-tabs-nav .ant-tabs-ink-bar,
+    .ant-tabs-top>div>.ant-tabs-nav .ant-tabs-ink-bar,
+    .ant-tabs-bottom>div>.ant-tabs-nav .ant-tabs-ink-bar {
+        height: 3px;
+    }
+
+    .ant-tabs-ink-bar {
+        background: #174AFF;
+    }
+}
+
+.countdown {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+}
+
+.game-board {
+    display  : flex;
+    flex-wrap: wrap;
+
+    &>.game-board--left_panel {
+        width             : 60%;
+        padding           : 60px;
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-image      : linear-gradient(to bottom,
+                rgba(255, 255, 255, 0),
+                rgba(255, 255, 255, 1),
+                rgba(255, 255, 255, 0)) 1 100%;
+
+        form#final_hand {
+
+            * {
+                color: white;
+            }
+
+            &>div:first-child {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+                padding      : 45px 0;
+
+                &.border-none {
+                    border: none;
+                }
+
+                &>div:first-child {
+                    text-align    : center;
+                    font-family   : Redtone, sans-serif;
+                    font-style    : normal;
+                    font-weight   : bold;
+                    font-size     : 35px;
+                    line-height   : 35px;
+                    letter-spacing: 0.075em;
+                }
+
+                .dealt_in_time {
+                    width       : 40%;
+                    margin-left : auto;
+                    margin-right: auto;
+
+                    &>div:first-child {
+                        margin-bottom : 55px;
+                        font-family   : Redtone, sans-serif;
+                        font-style    : normal;
+                        font-weight   : bold;
+                        font-size     : 35px;
+                        line-height   : 35px;
+                        text-align    : center;
+                        letter-spacing: 0.075em;
+                    }
+
+                    &>.countdown {
+                        &>div {
+                            &>div:first-child {
+                                margin-bottom : 30px;
+                                font-family   : Redtone, sans-serif;
+                                font-style    : normal;
+                                font-weight   : 600;
+                                font-size     : 40px;
+                                line-height   : 50px;
+                                letter-spacing: 0.025em;
+                            }
+
+                            &>div:last-child {
+                                font-family   : Redtone, sans-serif;
+                                font-style    : normal;
+                                font-weight   : normal;
+                                font-size     : 26px;
+                                line-height   : 26px;
+                                letter-spacing: 0.035em;
+                                color         : rgba(255, 255, 255, 0.9);
+                            }
+                        }
+                    }
+                }
+
+                .end_in_time {
+                    width : 30%;
+                    margin: auto;
+
+                    * {
+                        font-family   : "DM Sans", sans-serif;
+                        font-weight   : 500;
+                        font-size     : 20px;
+                        line-height   : 28px;
+                        text-align    : center;
+                        letter-spacing: 0.075em;
+                    }
+
+                    &>div:first-child {
+                        margin-bottom: 20px;
+                    }
+
+                    &>.countdown>div>div:first-child {
+                        font-family   : Redtone, sans-serif;
+                        font-weight   : 600;
+                        font-size     : 40px;
+                        line-height   : 50px;
+                        letter-spacing: 0.025em;
+                    }
+                }
+
+                #final_hand_river_cards {
+                    display        : flex;
+                    align-items    : center;
+                    justify-content: center;
+                    margin-top     : 35px;
+                    margin-bottom  : 55px;
+
+                    &>div {
+                        text-align: center;
+                        margin    : 0 30px;
+                    }
+                }
+            }
+
+            &>div:last-child {
+                margin-top: 45px;
+
+                .title {
+                    font-family   : Redtone, sans-serif;
+                    font-style    : normal;
+                    font-weight   : bold;
+                    font-size     : 35px;
+                    line-height   : 35px;
+                    text-align    : center;
+                    letter-spacing: 0.075em;
+                }
+
+                .desc {
+                    font-family: Karla, sans-serif;
+                    font-style : normal;
+                    font-weight: normal;
+                    font-size  : 17px;
+                    line-height: 27px;
+                    text-align : center;
+                }
+            }
+
+            .ant-radio-group.ant-radio-group-outline {
+                width: 100%;
+            }
+
+            .available_hands-wrapper {
+                display        : flex;
+                justify-content: space-evenly;
+                align-items    : center;
+                flex-wrap      : wrap;
+                margin-top     : 40px;
+
+                .nft_card-available {
+                    position     : relative;
+                    width        : 30%;
+                    border-radius: 12px;
+                    padding      : 10px 10px 45px 10px;
+                    margin-bottom: 80px;
+                    background   : #FFFFFF;
+
+                    .nft_card-image {
+                        box-shadow: 0px 0px 13px rgba(30, 30, 47, 0.16);
+                        background: transparent;
+                    }
+
+                    &>span {
+                        position : absolute;
+                        left     : 50%;
+                        top      : 100%;
+                        transform: translate(-50%, -50%);
+
+                        &>button {
+                            display        : flex;
+                            justify-content: center;
+                            align-items    : center;
+                            padding        : 16px 22px;
+                            background     : linear-gradient(170.35deg, #0033E7 7.75%, #0066FF 102.31%);
+                            border         : none;
+                            border-radius  : 5px;
+
+                            &>span {
+                                font-family: Karla, sans-serif;
+                                font-style : normal;
+                                font-weight: bold;
+                                font-size  : 19px;
+                                line-height: 22px;
+                                color      : #FFFFFF;
+                                margin     : 0px 10px;
+                            }
+                        }
+                    }
+
+                    &>button {
+                        display        : flex;
+                        justify-content: center;
+                        align-items    : center;
+                        padding        : 16px 22px;
+                        background     : linear-gradient(170.35deg, #0033E7 7.75%, #0066FF 102.31%);
+                        border         : none;
+                        border-radius  : 5px;
+                        position       : absolute;
+                        left           : 50%;
+                        top            : 100%;
+                        transform      : translate(-50%, -50%);
+
+                        &>span {
+                            font-family: Karla, sans-serif;
+                            font-style : normal;
+                            font-weight: bold;
+                            font-size  : 19px;
+                            line-height: 22px;
+                            color      : #FFFFFF;
+                            margin     : 0px 10px;
+                        }
+                    }
+
+                    label.ant-radio-button-wrapper {
+                        background: transparent;
+
+                        span.ant-radio-button {
+                            display        : flex;
+                            justify-content: center;
+                            align-items    : center;
+
+                            input[type="radio"].ant-radio-button-input {
+                                opacity: unset;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .leaderboard-wrapper {
+
+                .ant-table-wrapper {
+
+                    * {
+                        color: black;
+                    }
+                }
+            }
+        }
+
+        .river_stage-header {
+            margin-bottom: 60px;
+
+            &>.title {
+                font-family   : Redtone, sans-serif;
+                font-style    : normal;
+                font-weight   : bold;
+                font-size     : 35px;
+                line-height   : 35px;
+                text-align    : center;
+                letter-spacing: 0.075em;
+                margin-bottom : 12px;
+            }
+
+            &>.desc {
+                font-family: Karla, sans-serif;
+                font-style : normal;
+                font-weight: normal;
+                font-size  : 17px;
+                line-height: 27px;
+                text-align : center;
+            }
+        }
+
+        .river_stage-subtitle {
+            font-family   : Redtone;
+            font-style    : normal;
+            font-weight   : bold;
+            font-size     : 25px;
+            line-height   : 35px;
+            text-align    : center;
+            letter-spacing: 0.075em;
+            margin-bottom : 20px;
+        }
+
+        .final_hand-btn--wrapper {
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            margin-bottom  : 60px;
+
+            .final_hand-btn {
+                border-radius: 5px;
+                margin       : 0 20px;
+                padding      : 10px 20px;
+                border       : none;
+                height       : unset;
+
+                &>span {
+                    font-family: Karla;
+                    font-style : normal;
+                    font-weight: bold;
+                    font-size  : 19px;
+                    line-height: 22px;
+                    display    : block;
+                }
+
+                &.submit {
+                    background: linear-gradient(170.35deg, #0033E7 7.75%, #0066FF 102.31%);
+
+                    &>span {
+                        color: #FFFFFF;
+                    }
+                }
+
+                &.check {
+                    background-color: white;
+
+                    &>span {
+                        color: #0033E7;
+                    }
+                }
+            }
+        }
+
+        label.ant-radio-button-wrapper {
+            position : absolute;
+            top      : calc(100% + 10px);
+            left     : 50%;
+            transform: translateX(-50%);
+        }
+
+        .waiting_section {
+
+            .title {
+                font-family   : Redtone, sans-serif;
+                font-style    : normal;
+                font-weight   : bold;
+                font-size     : 45px;
+                line-height   : 60px;
+                text-align    : center;
+                letter-spacing: 0.075em;
+            }
+
+            .subtitle {
+                font-family   : "DM Sans", sans-serif;
+                font-style    : normal;
+                font-weight   : bold;
+                font-size     : 25px;
+                line-height   : 35px;
+                text-align    : center;
+                letter-spacing: 0.075em;
+            }
+        }
+
+        .leaderboard-wrapper {
+            text-align: center;
+
+            .title {
+                font-family   : Redtone, sans-serif;
+                font-style    : normal;
+                font-weight   : bold;
+                font-size     : 45px;
+                line-height   : 65px;
+                text-align    : center;
+                letter-spacing: 0.075em;
+                margin-bottom : 70px;
+            }
+
+            .desc {
+                font-family   : "DM Sans", sans-serif;
+                font-style    : normal;
+                font-weight   : bold;
+                font-size     : 20px;
+                line-height   : 26px;
+                letter-spacing: 0.12em;
+                margin-top    : 50px;
+                margin-bottom : 30px;
+            }
+
+            button.distribute_btn {
+                background   : #174AFF;
+                border-radius: 5px;
+                padding      : 10px 40px;
+                border       : none;
+                height       : unset;
+
+                span {
+                    font-family: Karla, sans-serif;
+                    font-style : normal;
+                    font-weight: bold;
+                    font-size  : 19px;
+                    line-height: 22px;
+                    color      : #FFFFFF;
+                }
+            }
+
+            table {
+
+                th,
+                td {
+                    text-align: center;
+                }
+
+                th {
+                    font-family: "DM Sans", sans-serif;
+                    font-style : normal;
+                    font-weight: 500;
+                    font-size  : 17px;
+                    line-height: 17px;
+                    color      : rgba(0, 0, 0, 0.62);
+                    padding    : 17px 10px;
+                }
+
+                td {
+                    font-family: "DM Sans", sans-serif;
+                    font-style : normal;
+                    font-weight: normal;
+                    font-size  : 15px;
+                    line-height: 15px;
+                    color      : rgba(0, 0, 0, 0.88);
+
+                    &:first-child {
+
+                        &>svg {
+                            margin-right: 10px;
+                        }
+                    }
+
+                    a {
+                        color: #1687EF !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &>.game-board--right_panel {
+        width  : 40%;
+        padding: 40px;
+
+        .game_info-title {
+            font-family   : Redtone, sans-serif;
+            font-style    : normal;
+            font-weight   : bold;
+            font-size     : 40px;
+            line-height   : 40px;
+            letter-spacing: 0.075em;
+            color         : #FFFFFF;
+        }
+
+        .bet_price-info {
+            &>p {
+                margin-bottom : 25px;
+                font-family   : "DM Sans", sans-serif;
+                font-style    : normal;
+                font-weight   : bold;
+                font-size     : 20px;
+                line-height   : 27px;
+                letter-spacing: 0.12em;
+            }
+        }
+
+        .game_info-table--wrapper {
+            width           : 100%;
+            background-color: white;
+            border-radius   : 8px;
+            padding         : 10px;
+
+            table.game_info-table {
+                width: 100%;
+
+                td:first-child {
+                    width: 32%;
+                }
+
+                td:not(:first-child) {
+                    width: 17%;
+                }
+
+                td {
+                    text-align    : center;
+                    font-family   : "DM Sans", sans-serif;
+                    font-style    : normal;
+                    font-weight   : 500;
+                    font-size     : 17px;
+                    line-height   : 17px;
+                    color         : rgba(0, 0, 0, 0.62);
+                    padding-top   : 15px;
+                    padding-bottom: 15px;
+                    border        : 1px solid rgba(0, 0, 0, 0.08);
+
+                    &:first-child {
+                        text-align  : left;
+                        padding-left: 20px;
+                    }
+                }
+
+                thead {
+                    tr {
+                        td {
+                            border-top: none;
+
+                            &:first-child {
+                                border-left: none;
+                            }
+
+                            &:last-child {
+                                border-right: none;
+                            }
+                        }
+                    }
+                }
+
+                tbody {
+                    td:first-child {
+                        border-left: none;
+                    }
+
+                    td:last-child {
+                        border-right: none;
+                    }
+
+                    tr:last-child>td {
+                        border-bottom: none;
+                    }
+
+                    td:not(:first-child) {
+                        font-family   : "DM Sans", sans-serif;
+                        font-style    : normal;
+                        font-weight   : 500;
+                        font-size     : 19px;
+                        line-height   : 19px;
+                        letter-spacing: 0.03em;
+                        color         : #000000;
+                    }
+                }
+            }
+        }
+
+        .played_cards-wrapper {
+            margin-top: 45px;
+
+            &>p {
+                font-family   : Redtone, sans-serif;
+                font-style    : normal;
+                font-weight   : bold;
+                font-size     : 30px;
+                line-height   : 30px;
+                letter-spacing: 0.075em;
+                color         : #FFFFFF;
+            }
+
+            .played_cards {
+                display      : inline-flex;
+                align-items  : center;
+                gap          : 10px;
+                padding      : 10px;
+                background   : #FFFFFF;
+                border-radius: 12px;
+                margin       : 10px 20px;
+
+                &>* {
+                    box-shadow: 0px 0px 13px rgba(30, 30, 47, 0.16);
+                }
+            }
+        }
+    }
+}
+
+.refundable_wrapper {
+    width    : 90%;
+    max-width: 90%;
+    margin   : 50px auto;
+
+    &>.title {
+        font-family   : Redtone, sans-serif;
+        font-style    : normal;
+        font-weight   : bold;
+        font-size     : 45px;
+        line-height   : 45px;
+        text-align    : center;
+        letter-spacing: 0.075em;
+        color         : #FFFFFF;
+    }
+
+    &>.desc {
+        font-family: Karla, sans-serif;
+        font-style : normal;
+        font-weight: normal;
+        font-size  : 16px;
+        line-height: 19px;
+        text-align : center;
+        color      : #FFFFFF;
+    }
+
+    &>.refundable_games {
+        width          : 60%;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        flex-wrap      : wrap;
+        margin         : 60px auto;
+
+        .refundable_game_card {
+            width        : 250px;
+            padding      : 20px;
+            margin       : 20px 15px;
+            background   : #FFFFFF;
+            border-radius: 12px;
+
+            &>.title {
+                font-family   : Redtone, sans-serif;
+                font-style    : normal;
+                font-weight   : bold;
+                font-size     : 22px;
+                line-height   : 27px;
+                letter-spacing: 0.065em;
+                color         : #242121;
+                text-align    : center;
+            }
+
+            &>button.claim_btn {
+                width         : 100%;
+                padding-top   : 12px;
+                padding-bottom: 12px;
+                background    : #174AFF;
+                border-radius : 5px;
+                font-family   : Karla, sans-serif;
+                font-style    : normal;
+                font-weight   : bold;
+                font-size     : 19px;
+                line-height   : 22px;
+                color         : #FFFFFF;
+
+                &:disabled {
+                    cursor: not-allowed !important;
+                }
+            }
+        }
+    }
+}
+
+.initialising_on_chain_data {
+    font-family: Karla;
+    font-size  : 16px;
+    line-height: 29px;
+    color      : #FFFFFF;
+    text-align : center;
+    padding    : 0;
+    margin     : 100px auto;
+}
+
+.coming-soon--wrapper {
+    &>img {
+        display     : block;
+        margin-left : auto;
+        margin-right: auto;
+        max-width   : 100%;
+    }
+
+    @media (max-width: 425px) {
+        &>.title {
+            font-size    : 35px;
+            line-height  : 42px;
+            margin-bottom: 32px;
+        }
+
+    }
+}
+
+.play--desktop {
+    display: block;
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
+}
+
+.play--mobile {
+    display: none;
+
+    @media (max-width: 1024px) {
+        display: block;
+    }
+}

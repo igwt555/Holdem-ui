@@ -1,0 +1,113 @@
+.history-wrapper {
+    width    : 90%;
+    max-width: 90%;
+    margin   : 50px auto;
+
+    &>.title {
+        font-family   : Redtone, sans-serif;
+        font-style    : normal;
+        font-weight   : bold;
+        font-size     : 45px;
+        line-height   : 45px;
+        text-align    : center;
+        letter-spacing: 0.075em;
+        color         : #FFFFFF;
+    }
+
+    .tabs-wrapper {
+        margin: 80px 60px;
+
+        .ant-tabs.ant-tabs-left {
+
+            .ant-tabs-nav {
+
+                .ant-tabs-nav-wrap {
+
+                    .ant-tabs-nav-list {
+
+                        .ant-tabs-tab {
+                            padding: 0;
+
+                            .ant-tabs-tab-btn {
+                                padding    : 15px 45px;
+                                font-family: Karla, sans-serif;
+                                font-style : normal;
+                                font-weight: bold;
+                                font-size  : 19px;
+                                line-height: 27px;
+                                color      : #FFFFFF;
+                            }
+
+                            &.ant-tabs-tab-active {
+                                .ant-tabs-tab-btn {
+                                    color: #2C5AFF;
+                                }
+                            }
+                        }
+
+                        .ant-tabs-ink-bar {
+                            width     : 4px;
+                            background: #174AFF;
+                        }
+                    }
+                }
+            }
+
+            .ant-tabs-content-holder {
+                border-left: 4px solid #FFFFFF;
+
+                .ant-tabs-content.ant-tabs-content-left {
+
+                    .ant-tabs-tabpane {
+                        padding: 10px 45px;
+
+                        .game_history_main_body {
+
+                            .subtitle {
+                                font-family   : "DM Sans", sans-serif;
+                                font-style    : normal;
+                                font-weight   : bold;
+                                font-size     : 22px;
+                                line-height   : 32px;
+                                letter-spacing: 0.015em;
+                                color         : #FFFFFF;
+                                margin-top    : 2em;
+                            }
+
+                            .desc {
+                                font-family: Karla, sans-serif;
+                                font-style : normal;
+                                font-weight: normal;
+                                font-size  : 17px;
+                                line-height: 27px;
+                                color      : #FFFFFF;
+                            }
+
+                            &>div:first-child>div:first-child>p.subtitle:first-child {
+                                margin-top: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ul.ant-pagination {
+        text-align    : center;
+        padding-bottom: 50px;
+    }
+
+    .game_history_river_cards {
+        display        : flex;
+        align-items    : center;
+        justify-content: center;
+        margin-top     : 35px;
+        margin-bottom  : 55px;
+
+        &>div {
+            text-align: center;
+            margin    : 0 30px;
+        }
+    }
+}
